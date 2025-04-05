@@ -3,10 +3,11 @@ using UnityEngine;
 public class CollectItems : MonoBehaviour
 {
     public SlidingDoor door;
-    public SlidingDoor2 door2;
+    public KeyDoor keyDoor;
     public int collectedItems = 0;
+    public int collectedKey = 0;
     public int requiredItems = 3;
-    public int requiredItems2 = 5;
+    public int requiredKeys = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,9 +23,9 @@ public class CollectItems : MonoBehaviour
             door.OpenTheDoor();          
         }
         
-        if (collectedItems >= requiredItems2) 
+        if (collectedKey >= requiredKeys) 
         {
-            door2.OpenTheDoor2();
+            keyDoor.OpenKeyDoor();
         }
     }
 
@@ -33,6 +34,11 @@ public class CollectItems : MonoBehaviour
         if (other.gameObject.tag == "Collectable") 
         {
             collectedItems++;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Key") 
+        {
+            collectedKey++;
             Destroy(other.gameObject);
         }
     }

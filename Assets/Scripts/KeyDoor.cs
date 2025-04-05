@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SlidingDoor2 : MonoBehaviour
+public class KeyDoor : MonoBehaviour
 {
 
     public Vector3 positionOffset = new Vector3(0f, -2f, 0f);
@@ -13,7 +13,7 @@ public class SlidingDoor2 : MonoBehaviour
         openPosition = transform.position + positionOffset;
     }
 
-    public void OpenTheDoor2()
+    public void OpenKeyDoor()
     {
         //MoveTowards makes an object move towards a target object specified by a max distance
         transform.position = Vector3.MoveTowards(transform.position, openPosition, speed * Time.deltaTime);

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - Win
+  - Key
   layers:
   - Default
   - TransparentFX
